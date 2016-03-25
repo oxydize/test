@@ -4,7 +4,7 @@ This demo application utilizes RTmessaging, the cutting-edge publish-subscribe m
 
 ## About Sky Traffic ##
 
-Sky Traffic is a geo-location web application, designed to showcase the power of the RTmessaging used in conjunction with other external services to develop real-time applications. Created with the RTPlatform JavaScript SDK and the Google Maps API, this application shows the location of every flight in the world on a single map in a browser window.
+Sky Traffic is a logistical geolocation and geomapping web application, designed to showcase the power of the RTmessaging used in conjunction with other external services to develop real-time applications. Created with the RTPlatform JavaScript SDK and the Google Maps API, this application shows the location of every flight in the world on a single map in a browser window.
 
 ## How It Works ##
 
@@ -18,11 +18,6 @@ The bulk of the application is the Google Maps API drawing and updating the map.
 ```javascript
 this.client = MZ.RTM.create(appKey);
 // [SkyTraffic.js, line 11]
-```
-### Subscribe and Get History ###
-```javascript
-this.channel.subscribe({history: {max_age: 3600}});
-// [SkyTraffic.js, line xx]
 ```
 ### Process Message Data and Draw Plane ###
 ```javascript
@@ -41,6 +36,22 @@ handleChannelData(pdu) {
 }
 // [SkyTraffic.js, lines 17-18, 56-62]
 ```
+### Subscribe and Get History ###
+```javascript
+this.channel.subscribe({history: {max_age: 3600}});
+// [SkyTraffic.js, line xx]
+```
+
+## More Demo Applications ##
+<a href="#">Chat App</a>
+<a href="#">Social, Collaborative App</a>
+<a href="#">Government</a>
+<a href="#">Dashboards</a>
+
+
+## Documentation
+<a href="#">RTPlatform Overview</a>
+<a href="#">Client SDKs</a>
 
 
 
