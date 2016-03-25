@@ -16,3 +16,4 @@ The bulk of the application is the Google Maps API drawing and updating the map.
 
 ### Connect to RTmessaging ###
 
+  this.client = MZ.RTM.create(appKey);
