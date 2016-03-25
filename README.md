@@ -15,22 +15,26 @@ Sky Traffic consumes a real-time data feed that publishes the data for a flight 
 The bulk of the application is the Google Maps API drawing and updating the map. The following code samples show how you can harness the power of RTmessaging with only a few lines of code of the JavaScript SDK.
 
 ### Connect to RTmessaging ###
-
 ```javascript
 this.client = MZ.RTM.create(appKey);
 // [SkyTraffic.js, line 11]
 ```
-### Process Mesaage Data and Draw Plane ###
-
-Create a channel and define a callback to handle published data. When the application receives a new published message, it draws the plane.
-
+### Subscribe and Get History ###
 ```javascript
+this.channel.subscribe({history: {max_age: 3600}});
+// [SkyTraffic.js, line xx]
+```
+### Process Message Data and Draw Plane ###
+```javascript
+// create a channel
 this.channel = this.client.createChannel(channelName);
+// define callback
 this.channel.on('data', ::this.handleChannelData);
 ...
 handleChannelData(pdu) {
 	pdu.body.messages.forEach(data => {
 		data['updatedAt'] = Date.now();
+		// draw the plane
 		this.planes.set(data.aircraft, data);
     });
 	this.invalidate();
@@ -38,11 +42,5 @@ handleChannelData(pdu) {
 // [SkyTraffic.js, lines 17-18, 56-62]
 ```
 
-### Subscribe and Get History ###
 
-```javascript
-this.channel.subscribe({history: {max_age: 3600}});
-// [SkyTraffic.js, line xx]
-```
-## 
 
