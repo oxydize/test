@@ -20,4 +20,29 @@ The bulk of the application is the Google Maps API drawing and updating the map.
 this.client = MZ.RTM.create(appKey);
 // [SkyTraffic.js, line 11]
 ```
-this.client = MZ.RTM.create(appKey);
+### Process Mesaage Data and Draw Plane ###
+
+Create a channel and define a callback to handle published data. When the application receives a new published message, it draws the plane.
+
+```javascript
+this.channel = this.client.createChannel(channelName);
+this.channel.on('data', ::this.handleChannelData);
+...
+handleChannelData(pdu) {
+	pdu.body.messages.forEach(data => {
+		data['updatedAt'] = Date.now();
+		this.planes.set(data.aircraft, data);
+    });
+	this.invalidate();
+}
+// [SkyTraffic.js, lines 17-18, 56-62]
+```
+
+### Subscribe and Get History ###
+
+```javascript
+this.channel.subscribe({history: {max_age: 3600}});
+// [SkyTraffic.js, line xx]
+```
+## 
+
