@@ -8,7 +8,7 @@ Sky Traffic is a geo-location web application, designed to showcase the power of
 
 ## How It Works ##
 
-Sky Traffic consumes a real-time data feed that publishes the data for a single flight to a channel on the RTM endpoint. Sky Traffic subscribes to that channel. When the application receives a new message (on average, 10 per second), it updates the map with the received flight data. As a result, you can see every flight, its flight number, and its progress as it is updated in real-time. At the heart of the application, RTmessaging processes the data feed and uses the Google Maps API to display the results.
+Sky Traffic consumes a real-time data feed that publishes the data for a flight to a single channel on the RTM endpoint. Sky Traffic subscribes to that channel. When the application receives a new message (on average, 10 per second), it updates the map with the received flight data. As a result, you can see every flight, its flight number, and its progress as it is updated in real-time. At the heart of the application, RTmessaging processes the data feed and uses the Google Maps API to display the results.
 
 ## The Code ##
 
