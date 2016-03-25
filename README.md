@@ -43,14 +43,14 @@ this.channel.subscribe({history: {max_age: 3600}});
 ```
 
 ## More Demo Applications ##
-<a href="#">Chat App</a>
-<a href="#">Social, Collaborative App</a>
-<a href="#">Government</a>
+<a href="#">Chat App</a><br/>
+<a href="#">Social, Collaborative App</a><br/>
+<a href="#">Government</a><br/>
 <a href="#">Dashboards</a>
 
 
 ## Documentation
-<a href="#">RTPlatform Overview</a>
+<a href="#">RTPlatform Overview</a><br/>
 <a href="#">Client SDKs</a>
 
 
