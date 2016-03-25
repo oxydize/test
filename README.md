@@ -1,5 +1,3 @@
-# test
-
 This demo application utilizes RTmessaging, the cutting-edge publish-subscribe messaging engine at the heart of RTPlatform, a platform built by Machine Zone for extreme scale,  performance, and reliability. The RTM Service utilizes the publish-subscribe messaging pattern to connect client applications through the RTM Service WebSocket endpoint.
 
 [TBD: disclaimer legal text about if you can download and use this application]
